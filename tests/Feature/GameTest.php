@@ -82,8 +82,6 @@ class GameTest extends TestCase
 		DB::table('games')->insert(['sequence' => 'abcqweasdzxcvbg_', 'user_id' => 2]);
 
 		// 403 ошибка. Тест не принадлежит пользователю
-
-
 		$response = $this->json('POST', '/api/game/2/solve');
 		$response->assertStatus(403);
 
